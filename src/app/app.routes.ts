@@ -7,7 +7,7 @@ import {
   resolveTitle,
   resolveUserName,
 } from './users/user-tasks/user-tasks.component';
-import { routes as userRoutes } from './users/users.routes';
+//import { routes as userRoutes } from './users/users.routes';
 
 export const routes: Routes = [
   {
@@ -18,7 +18,8 @@ export const routes: Routes = [
   {
     path: 'users/:userId',
     component: UserTasksComponent,
-    children: userRoutes,
+    loadChildren:()=>import('./users/users.routes').then((mod)=>mod.routes),
+    //children: userRoutes,
     data: { message: 'Hello!' },
     resolve: { userName: resolveUserName },
     title: resolveTitle,

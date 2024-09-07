@@ -1,9 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import {
-  ActivatedRouteSnapshot,
   ResolveFn,
-  RouterLink,
-  RouterStateSnapshot,
+  RouterLink
 } from '@angular/router';
 import { TaskComponent } from './task/task.component';
 import { Task } from './task/task.model';
